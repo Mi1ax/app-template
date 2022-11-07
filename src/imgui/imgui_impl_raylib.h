@@ -4,7 +4,8 @@
 #include <raylib.h>
 
 // basic API
-void rlImGuiSetup(bool dark = true);
+void rlImGuiSetup();
+void SetDarkThemeColors();
 void rlImGuiBegin();
 void rlImGuiEnd();
 void rlImGuiShutdown();
