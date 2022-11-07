@@ -1,8 +1,13 @@
 #include <raylib.h>
 
+#include "imgui/imgui_impl_raylib.h"
+#include "imgui.h"
+
 int main() {
-    InitWindow(640, 360, "App Template");
+    InitWindow(1280, 720, "App Template");
     SetTargetFPS(75);
+
+    rlImGuiSetup();
 
     while(!WindowShouldClose())
     {
@@ -12,9 +17,13 @@ int main() {
                  0,
                  0,
                  24, BLACK);
+        rlImGuiBegin();
+        ImGui::ShowDemoWindow();
+        rlImGuiEnd();
         EndDrawing();
     }
 
+    rlImGuiShutdown();
     CloseWindow();
 	return 0;
 }
